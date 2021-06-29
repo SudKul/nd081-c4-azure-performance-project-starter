@@ -31,14 +31,13 @@ stats_recorder = stats.stats_recorder
 # Logging
 config_integration.trace_integrations(['logging'])
 logger = logging.getLogger(__name__)
-# logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=5f176274-648f-4414-a395-c94954f277c4'))
-
+"""
 handler = AzureLogHandler(connection_string='InstrumentationKey=5f176274-648f-4414-a395-c94954f277c4')
 handler.setFormatter(logging.Formatter('%(traceId)s %(spanId)s %(message)s'))
 logger.addHandler(handler)
+"""
 
 logger.addHandler(AzureEventHandler(connection_string='InstrumentationKey=5f176274-648f-4414-a395-c94954f277c4'))
-
 logger.setLevel(logging.INFO)
 
 # Metrics
