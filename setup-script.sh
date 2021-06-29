@@ -66,8 +66,9 @@ az vmss create \
   --upgrade-policy-mode automatic \
   --admin-username $adminName \
   --generate-ssh-keys \
-  --verbose \
-  --instance-count 1
+  --verbose
+  
+  #--instance-count 1
 
 echo "VM scale set created: $vmssName"
 
@@ -87,9 +88,9 @@ echo "NSG: $nsgName associated with subnet: $subnetName"
 echo "Creating health probe $probeName"
 
 az network lb probe create \
-  --resource-group $resourceGroup \
-  --lb-name $lbName \
-  --name $probeName \
+  --resource-group acdnd-c4-project \
+  --lb-name udacity-vmss-lb \
+  --name tcpProbe \
   --protocol tcp \
   --port 80 \
   --interval 5 \
