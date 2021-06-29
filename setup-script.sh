@@ -66,9 +66,13 @@ az vmss create \
   --upgrade-policy-mode automatic \
   --admin-username $adminName \
   --generate-ssh-keys \
+<<<<<<< HEAD
   --verbose
   
   #--instance-count 1
+=======
+  --verbose 
+>>>>>>> 7aacb8e9f523de0c07d860092320907c96e51f49
 
 echo "VM scale set created: $vmssName"
 
