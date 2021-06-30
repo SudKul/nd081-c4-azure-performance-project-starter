@@ -30,6 +30,7 @@ stats_recorder = stats.stats_recorder
 
 # Logging
 config_integration.trace_integrations(['logging'])
+config_integration.trace_integrations(['requests'])
 logger = logging.getLogger(__name__)
 """
 handler = AzureLogHandler(connection_string='InstrumentationKey=a6cfdc31-bc29-493e-9b89-7618597842b9')
