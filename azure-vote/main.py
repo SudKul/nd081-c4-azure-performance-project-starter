@@ -79,7 +79,7 @@ if ("TITLE" in os.environ and os.environ['TITLE']):
 else:
     title = app.config['TITLE']
 
-# Redis Connection to a local Redis server running on the same machine where the current Flask app is running.
+# For VMSS: Redis Connection to a local Redis server running on the same machine where the current Flask app is running.
 r = redis.Redis()
 
 # Change title to host name to demo NLB
@@ -141,7 +141,7 @@ def index():
             return render_template("index.html", value1=int(vote1), value2=int(vote2), button1=button1, button2=button2, title=title)
 
 if __name__ == "__main__":
-    # comment line below when deploying to VMSS
-    app.run() # local
-    # uncomment the line below before deployment to VMSS
+    # TODO: Use the statement below when running locally
+    app.run() 
+    # TODO: Use the statement below before deployment to VMSS
     # app.run(host='0.0.0.0', threaded=True, debug=True) # remote
